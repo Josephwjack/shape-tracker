@@ -1,6 +1,16 @@
 import Triangle from './../src/triangle.js';
 
 describe('Triangle', () => {
+  let reusableTriangle;
+
+  beforeEach()) => {
+    reusableTriangle = new Triangle(5, 5, 5);
+  });
+
+  test('should show how beforeEach() works', () => {
+    console.log(reusableTriangle);
+  });
+});
 
   test('should correctly create a triangle object with three lengths', () => {
     const triangle = new Triangle(2,4,5);
@@ -19,5 +29,9 @@ describe('Triangle', () => {
   test('should correctly determine whether three lengths make an isosceles triangle', () => {
   const isocTriangle = new Triangle(5,5,7)
   expect(isocTriangle.checkType()).toEqual("isosceles triangle");
-});
+  });
+  test('should correctly determine whether three lengths make an equilateral triangle', () => {
+    const equiTriangle = new Triangle(5,5,5)
+    expect(equiTriangle.checkType()).toEqual("equilateral triangle");
+  });
 });
